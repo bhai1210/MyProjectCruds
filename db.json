@@ -1,58 +1,22 @@
 {
   "posts": [
     {
-      "id": "0c7d",
-      "productName": "Smartwatch E2",
-      "description": "Smartwatch for men women notify you incoming calls, SMS notifications. when you connect the smartphone with fitness tracker...",
+      "id": "08f3",
+      "productName": "RahulWatch",
+      "description": "Watch related",
       "category": "Watch",
       "tags": [
-        "Watch",
-        "Gadget"
-      ],
-      "status": "Published",
-      "basePrice": "5",
-      "discountType": "Fixed",
-      "discountPercentage": "0%",
-      "taxClass": "Tax Free",
-      "vatAmount": "0%",
-      "sku": "302002",
-      "barcode": "0984939101123",
-      "quantity": "124",
-      "variants": [
-        {
-          "type": "Color",
-          "value": "Black"
-        },
-        {
-          "type": "Color",
-          "value": "Gray"
-        }
-      ],
-      "shipping": {
-        "weight": "0.25 kg",
-        "height": "10 cm",
-        "length": "10 cm",
-        "width": "7 cm"
-      }
-    },
-    {
-      "id": "20c8",
-      "productName": "Mywatch",
-      "description": "Smartwatch for men women notify you incoming calls, SMS notifications. when you connect the smartphone with fitness tracker...",
-      "category": "Watch",
-      "tags": [
-        "Watch",
-        "Gadget"
+        ""
       ],
       "status": "Draft",
-      "basePrice": "6",
+      "basePrice": "34",
       "discountType": "No Discount",
-      "discountPercentage": "0%",
+      "discountPercentage": "",
       "taxClass": "Tax Free",
-      "vatAmount": "0%",
-      "sku": "302002",
-      "barcode": "0984939101123",
-      "quantity": "123",
+      "vatAmount": "",
+      "sku": "10",
+      "barcode": "",
+      "quantity": "67",
       "variants": [
         {
           "type": "Color",
@@ -64,97 +28,29 @@
         }
       ],
       "shipping": {
-        "weight": "0.25 kg",
-        "height": "10 cm",
-        "length": "10 cm",
-        "width": "7 cm"
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
       }
     },
     {
-      "id": "d401",
+      "id": "036f",
       "productName": "ajay",
-      "description": "4343",
-      "category": "Smartphone",
-      "tags": [
-        ""
-      ],
-      "status": "Archived",
-      "basePrice": "34",
-      "discountType": "No Discount",
-      "discountPercentage": "",
-      "taxClass": "Tax Free",
-      "vatAmount": "",
-      "sku": "3",
-      "barcode": "",
-      "quantity": "54",
-      "variants": [
-        {
-          "type": "Color",
-          "value": "Black"
-        },
-        {
-          "type": "Color",
-          "value": "Gray"
-        }
-      ],
-      "shipping": {
-        "weight": "",
-        "height": "",
-        "length": "",
-        "width": ""
-      }
-    },
-    {
-      "id": "24d3",
-      "productName": "fdfdfd",
-      "description": "fdfd",
-      "category": "Watch",
-      "tags": [
-        ""
-      ],
-      "status": "Published",
-      "basePrice": "34",
-      "discountType": "No Discount",
-      "discountPercentage": "",
-      "taxClass": "Tax Free",
-      "vatAmount": "",
-      "sku": "3",
-      "barcode": "",
-      "quantity": "54",
-      "variants": [
-        {
-          "type": "Color",
-          "value": "Black"
-        },
-        {
-          "type": "Color",
-          "value": "Gray"
-        }
-      ],
-      "shipping": {
-        "weight": "",
-        "height": "",
-        "length": "",
-        "width": ""
-      }
-    },
-    {
-      "id": "78e2",
-      "productName": "fdfdfd",
-      "description": "fddfd",
+      "description": "ajaykundan",
       "category": "Tablet",
       "tags": [
         ""
       ],
-      "status": "Out of Stock",
-      "basePrice": "34",
+      "status": "Archived",
+      "basePrice": "89",
       "discountType": "No Discount",
       "discountPercentage": "",
       "taxClass": "Tax Free",
       "vatAmount": "",
-      "sku": "3",
+      "sku": "45",
       "barcode": "",
-      "quantity": "54",
+      "quantity": "87",
       "variants": [
         {
           "type": "Color",
@@ -173,22 +69,58 @@
       }
     },
     {
-      "id": "267b",
-      "productName": "Ranu",
-      "description": "fdfdfd",
-      "category": "Smartphone",
+      "id": "da0e",
+      "productName": "kundanbhai",
+      "description": "kundan ke kudle",
+      "category": "Tablet",
       "tags": [
         ""
       ],
-      "status": "Published",
-      "basePrice": "43434",
+      "status": "Archived",
+      "basePrice": "77.02",
       "discountType": "No Discount",
       "discountPercentage": "",
       "taxClass": "Tax Free",
       "vatAmount": "",
-      "sku": "434343",
+      "sku": "78",
       "barcode": "",
-      "quantity": "34343",
+      "quantity": "23",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    },
+    {
+      "id": "676b",
+      "productName": "mihir",
+      "description": "fdf",
+      "category": "Smartphone",
+      "tags": [
+        "",
+        "Gadget",
+        "Watch"
+      ],
+      "status": "Archived",
+      "basePrice": "76",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "56",
+      "barcode": "",
+      "quantity": "14",
       "variants": [
         {
           "type": "Color",

@@ -151,7 +151,7 @@ export default function ProductList() {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
     
   
-    
+  
     
     
     
