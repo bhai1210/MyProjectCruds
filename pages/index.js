@@ -33,7 +33,7 @@ export default function Home() {
 
    
       <>
-      <div className="w-full">
+      <div className="min-h-full flex flex-col justify-between">
 
         <Profile />
         <div className="mb-6">

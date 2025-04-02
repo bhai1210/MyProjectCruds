@@ -15,7 +15,7 @@ import logo from "../../public/Logo.jpg"
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-export default function SidebarDrawer() {
+export default function SidebarDrawer({ onLinkClick }) {
   const router = useRouter();
   const [openEcom, setOpenEcom] = useState(true);
   const [openContact, setOpenContact] = useState(false);
@@ -33,7 +33,7 @@ export default function SidebarDrawer() {
       {/* Navigation */}
       <nav className="flex flex-col gap-1">
         {/* Dashboard */}
-        <Link href="/">
+        <Link onClick={onLinkClick}  href="/">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/dashboard")
@@ -74,7 +74,7 @@ export default function SidebarDrawer() {
 
           {openEcom && (
             <div className="ml-10 mt-1    space-y-1 text-sm">
-              <Link href="/products/table">
+              <Link  onClick={onLinkClick}  href="/products/table">
                 <span
                   className={`block py-2 ${
                     isActive("/products/table")
@@ -85,12 +85,12 @@ export default function SidebarDrawer() {
                   Product
                 </span>
               </Link>
-              <Link href="">
+              <Link onClick={onLinkClick}   href="">
                 <span className="block py-2 text-gray-600 hover:text-black">
                   Categories
                 </span>
               </Link>
-              <Link href="">
+              <Link  onClick={onLinkClick}  href="">
                 <span className="flex justify-between py-2 text-gray-600 hover:text-black">
                   <span>Orders</span>
                   <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full">
@@ -98,7 +98,7 @@ export default function SidebarDrawer() {
                   </span>
                 </span>
               </Link>
-              <Link href="">
+              <Link onClick={onLinkClick}  href="">
                 <span className="block py-2 text-gray-600 hover:text-black">
                   Customer
                 </span>
@@ -108,7 +108,7 @@ export default function SidebarDrawer() {
         </div>
 
         {/* Project */}
-        <Link href="">
+        <Link onClick={onLinkClick}  href="">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/projects")
@@ -144,7 +144,7 @@ export default function SidebarDrawer() {
         </div>
 
         {/* Static Items */}
-        <Link href="">
+        <Link onClick={onLinkClick}  href="">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/file-manager")
@@ -157,7 +157,7 @@ export default function SidebarDrawer() {
           </span>
         </Link>
 
-        <Link href="">
+        <Link onClick={onLinkClick}  href="">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/chat")
@@ -170,7 +170,7 @@ export default function SidebarDrawer() {
           </span>
         </Link>
 
-        <Link href="">
+        <Link  onClick={onLinkClick}  href="">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/calendar")

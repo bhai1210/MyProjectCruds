@@ -10,11 +10,11 @@ export default function App({ Component, pageProps }) {
     <div className="bg-gray-50 min-h-screen flex relative overflow-x-hidden">
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-40  w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out
+        className={`fixed top-0 left-0 z-40 h-full  w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
         md:relative md:translate-x-0 md:block`}
       >
-        <SidebarDrawer />
+        <SidebarDrawer  onLinkClick={() => setIsSidebarOpen(false)} />
       </aside>
 
       {/* Overlay (for mobile only) */}
