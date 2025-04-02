@@ -106,7 +106,7 @@
     },
     {
       "id": "4666",
-      "productName": "rahul",
+      "productName": "rahulbhai",
       "description": "bhavsar",
       "category": "Smartphone",
       "tags": [
@@ -118,9 +118,43 @@
       "discountPercentage": "",
       "taxClass": "Tax Free",
       "vatAmount": "",
-      "sku": "3",
+      "sku": "40",
       "barcode": "",
       "quantity": "54",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    },
+    {
+      "id": "7a65",
+      "productName": "fdfdfdf",
+      "description": "fdfd",
+      "category": "Smartphone",
+      "tags": [
+        ""
+      ],
+      "status": "Published",
+      "basePrice": "32",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "23243",
+      "barcode": "",
+      "quantity": "45343",
       "variants": [
         {
           "type": "Color",

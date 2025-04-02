@@ -574,7 +574,12 @@ const handlecancel = () => {
             <input
               className="w-full border px-3 py-2 rounded"
               value={sku}
-              onChange={(e) => setSku(e.target.value)}
+
+              onChange={(e) => {
+                setSku(e.target.value);
+                setSkuError("");
+              }}
+          
             />
 
 {skuError && (
