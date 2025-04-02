@@ -10,7 +10,7 @@
         "Gadget"
       ],
       "status": "Published",
-      "basePrice": "-0.01",
+      "basePrice": "5",
       "discountType": "Fixed",
       "discountPercentage": "0%",
       "taxClass": "Tax Free",
@@ -37,7 +37,7 @@
     },
     {
       "id": "20c8",
-      "productName": "Smartwatch E2",
+      "productName": "Mywatch",
       "description": "Smartwatch for men women notify you incoming calls, SMS notifications. when you connect the smartphone with fitness tracker...",
       "category": "Watch",
       "tags": [
@@ -45,14 +45,14 @@
         "Gadget"
       ],
       "status": "Draft",
-      "basePrice": "$400.00",
+      "basePrice": "6",
       "discountType": "No Discount",
       "discountPercentage": "0%",
       "taxClass": "Tax Free",
       "vatAmount": "0%",
       "sku": "302002",
       "barcode": "0984939101123",
-      "quantity": "124",
+      "quantity": "123",
       "variants": [
         {
           "type": "Color",
@@ -71,43 +71,9 @@
       }
     },
     {
-      "id": "2dac",
-      "productName": "gfgf",
-      "description": "fdfd",
-      "category": "Smartphone",
-      "tags": [
-        ""
-      ],
-      "status": "Published",
-      "basePrice": "32323",
-      "discountType": "No Discount",
-      "discountPercentage": "",
-      "taxClass": "Tax Free",
-      "vatAmount": "",
-      "sku": "5454",
-      "barcode": "",
-      "quantity": "4343",
-      "variants": [
-        {
-          "type": "Color",
-          "value": "Black"
-        },
-        {
-          "type": "Color",
-          "value": "Gray"
-        }
-      ],
-      "shipping": {
-        "weight": "",
-        "height": "",
-        "length": "",
-        "width": ""
-      }
-    },
-    {
-      "id": "4666",
-      "productName": "rahulbhai",
-      "description": "bhavsar",
+      "id": "d401",
+      "productName": "ajay",
+      "description": "4343",
       "category": "Smartphone",
       "tags": [
         ""
@@ -118,7 +84,7 @@
       "discountPercentage": "",
       "taxClass": "Tax Free",
       "vatAmount": "",
-      "sku": "40",
+      "sku": "3",
       "barcode": "",
       "quantity": "54",
       "variants": [
@@ -139,22 +105,90 @@
       }
     },
     {
-      "id": "7a65",
-      "productName": "fdfdfdf",
+      "id": "24d3",
+      "productName": "fdfdfd",
       "description": "fdfd",
+      "category": "Watch",
+      "tags": [
+        ""
+      ],
+      "status": "Published",
+      "basePrice": "34",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "3",
+      "barcode": "",
+      "quantity": "54",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    },
+    {
+      "id": "78e2",
+      "productName": "fdfdfd",
+      "description": "fddfd",
+      "category": "Tablet",
+      "tags": [
+        ""
+      ],
+      "status": "Out of Stock",
+      "basePrice": "34",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "3",
+      "barcode": "",
+      "quantity": "54",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    },
+    {
+      "id": "267b",
+      "productName": "Ranu",
+      "description": "fdfdfd",
       "category": "Smartphone",
       "tags": [
         ""
       ],
       "status": "Published",
-      "basePrice": "32",
+      "basePrice": "43434",
       "discountType": "No Discount",
       "discountPercentage": "",
       "taxClass": "Tax Free",
       "vatAmount": "",
-      "sku": "23243",
+      "sku": "434343",
       "barcode": "",
-      "quantity": "45343",
+      "quantity": "34343",
       "variants": [
         {
           "type": "Color",

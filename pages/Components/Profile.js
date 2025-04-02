@@ -4,7 +4,7 @@ import { FaSearch, FaCalendarAlt, FaUserFriends, FaEnvelope, FaChevronDown } fro
 
 export default function Profile() {
   return (
-    <div className="flex items-center justify-between w-full bg-white p-4 ">
+    <div className="flex items-center justify-between w-full bg-white p-4 m-0">
       {/* Left: Search */}
       <div className="flex items-center gap-2 text-gray-500">
         <FaSearch />

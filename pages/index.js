@@ -11,6 +11,7 @@ import Dashboard from "./Components/Dashboard";
 import SalesSource from "./Components/SalesSource";
 import Recentorder from "./Components/Recentorder";
 import Profile from "./Components/Profile";
+import SidebarDrawer from "./Components/Sidebar";
 
 export default function Home() {
 
@@ -28,9 +29,12 @@ export default function Home() {
   console.log(chartData,"this is my chartdata")
 
   return (
-    <div className="flex  bg-gray-50">
-      
-      <main className="flex-1">
+ 
+
+   
+      <>
+      <div className="w-full">
+
         <Profile />
         <div className="mb-6">
           <h2 className="text-2xl font-semibold">Welcome Back, Jenil!</h2>
@@ -41,7 +45,7 @@ export default function Home() {
         </div>
 
         {/* Boxes Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {/* Box 1 */}
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
             <div>
@@ -105,7 +109,11 @@ export default function Home() {
         <section>
           <Recentorder />
         </section>
-      </main>
-    </div>
+
+        </div>
+
+        </>
+    
+  
   );
 }

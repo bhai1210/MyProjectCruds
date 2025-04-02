@@ -23,7 +23,7 @@ export default function SidebarDrawer() {
   const isActive = (path) => router.pathname === path;
 
   return (
-    <div className="w-64  bg-white shadow p-4">
+    <div className="h-full overflow-y-auto p-4">
       {/* Logo */}
       <div className="flex items-center gap-2 mb-6">
         <Image src={logo} width={28} height={28} alt="Logo" />

@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import {
-  FaEye,
   FaEdit,
   FaTrash,
   FaDownload,
@@ -22,16 +21,11 @@ import { format } from 'date-fns';
 
 const getStatusBadge = (status) => {
   switch (status) {
-    case "Published":
-      return "bg-green-100 text-green-600";
-    case "Draft":
-      return "bg-gray-100 text-gray-500";
-    case "Low Stock":
-      return "bg-orange-100 text-orange-500";
-    case "Out of Stock":
-      return "bg-red-100 text-red-500";
-    default:
-      return "bg-gray-100 text-gray-500";
+    case "Published": return "bg-green-100 text-green-600";
+    case "Draft": return "bg-gray-100 text-gray-500";
+    case "Low Stock": return "bg-orange-100 text-orange-500";
+    case "Out of Stock": return "bg-red-100 text-red-500";
+    default: return "bg-gray-100 text-gray-500";
   }
 };
 
@@ -40,21 +34,17 @@ export default function ProductList() {
   const [activeTab, setActiveTab] = useState('All Product');
   const [productList, setProductList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortKey, setSortKey] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection',
-    },
+    { startDate: new Date(), endDate: new Date(), key: 'selection' },
   ]);
 
   const productsPerPage = 5;
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = productList.slice(indexOfFirstProduct, indexOfLastProduct);
-  const totalPages = Math.ceil(productList.length / productsPerPage);
 
   const fetchData = async () => {
     try {
@@ -68,6 +58,10 @@ export default function ProductList() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, sortKey, sortOrder]);
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
@@ -85,6 +79,70 @@ export default function ProductList() {
     }
   };
 
+  const handleExport = () => {
+    if (!productList.length) {
+      toast.warning("No data to export.");
+      return;
+    }
+    const csvHeaders = ["Product Name", "SKU", "Category", "Stock", "Price", "Status"];
+    const csvRows = productList.map((item) => [
+      item.productName,
+      item.sku,
+      item.category,
+      item.quantity,
+      item.basePrice,
+      item.status,
+    ]);
+    const csvContent = [csvHeaders, ...csvRows]
+      .map((row) => row.map(field => `"${field}"`).join(","))
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "product-list.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleSort = (key) => {
+    if (sortKey === key) {
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    } else {
+      setSortKey(key);
+      setSortOrder("asc");
+    }
+  };
+
+  // Filter based on search
+  const filteredProducts = productList.filter((item) =>
+    item.productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Sort
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (!sortKey) return 0;
+    const aValue = a[sortKey];
+    const bValue = b[sortKey];
+
+    if (typeof aValue === "string") {
+      return sortOrder === "asc"
+        ? aValue.localeCompare(bValue)
+        : bValue.localeCompare(aValue);
+    } else {
+      return sortOrder === "asc" ? aValue - bValue : bValue - aValue;
+    }
+  });
+
+  // Paginate
+  const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
+
   return (
     <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
       <ToastContainer />
@@ -94,7 +152,7 @@ export default function ProductList() {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
         <p className="text-sm text-gray-500">Dashboard &gt; Product List</p>
         <div className="flex flex-wrap gap-2">
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg text-blue-600 bg-blue-50 hover:bg-blue-100 text-sm font-medium transition">
+          <button onClick={handleExport} className="flex items-center gap-2 px-4 py-2 rounded-lg text-blue-600 bg-blue-50 hover:bg-blue-100 text-sm font-medium transition">
             <FaDownload className="text-sm" />
             Export
           </button>
@@ -131,6 +189,8 @@ export default function ProductList() {
             <input
               type="text"
               placeholder="Search product…"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="outline-none bg-transparent w-full sm:w-40"
             />
           </div>
@@ -141,10 +201,7 @@ export default function ProductList() {
               className="flex items-center gap-2 px-3 py-1.5 border rounded text-sm text-gray-500 bg-white hover:bg-gray-50 w-full sm:w-auto"
             >
               <FaCalendarAlt />
-              {`${format(selectedDate[0].startDate, 'MMM dd')} - ${format(
-                selectedDate[0].endDate,
-                'MMM dd'
-              )}`}
+              {`${format(selectedDate[0].startDate, 'MMM dd')} - ${format(selectedDate[0].endDate, 'MMM dd')}`}
             </button>
             {showDatePicker && (
               <div className="absolute z-50 top-12 right-0">
@@ -175,11 +232,54 @@ export default function ProductList() {
           <thead className="bg-gray-50 text-gray-500 text-left">
             <tr>
               <th className="p-4"><input type="checkbox" /></th>
-              <th className="p-4">Product</th>
-              <th>SKU</th>
-              <th>Category</th>
-              <th>Stock</th>
-              <th>Price</th>
+
+
+<th
+  className="p-4 cursor-pointer flex items-center gap-1"
+  onClick={() => handleSort("productName")}
+>
+  Product
+  <span>
+    {sortKey === "productName" ? (
+      sortOrder === "asc" ? "▲" : "▼"
+    ) : (
+      "⇅"
+    )}
+  </span>
+</th>
+
+
+
+
+
+<th className="cursor-pointer" onClick={() => handleSort("sku")}>
+  SKU
+  {sortKey === "sku" && (
+    <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+  )}
+</th>
+             
+<th className="cursor-pointer" onClick={() => handleSort("category")}>
+  Category
+  {sortKey === "category" && (
+    <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+  )}
+</th>
+
+<th className="cursor-pointer" onClick={() => handleSort("quantity")}>
+  Stock
+  {sortKey === "quantity" && (
+    <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+  )}
+</th>
+
+<th className="cursor-pointer" onClick={() => handleSort("basePrice")}>
+  Price
+  {sortKey === "basePrice" && (
+    <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+  )}
+</th>
+             
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -221,16 +321,14 @@ export default function ProductList() {
         {/* Pagination */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 p-4 text-sm text-gray-500">
           <span>
-            Showing {indexOfFirstProduct + 1}–{Math.min(indexOfLastProduct, productList.length)} of {productList.length}
+            Showing {indexOfFirstProduct + 1}–{Math.min(indexOfLastProduct, sortedProducts.length)} of {sortedProducts.length}
           </span>
           <div className="flex flex-wrap gap-1">
             {Array.from({ length: totalPages }, (_, i) => (
               <button
                 key={i + 1}
                 onClick={() => setCurrentPage(i + 1)}
-                className={`px-3 py-1 rounded border ${
-                  currentPage === i + 1 ? 'bg-blue-600 text-white' : ''
-                }`}
+                className={`px-3 py-1 rounded border ${currentPage === i + 1 ? 'bg-blue-600 text-white' : ''}`}
               >
                 {i + 1}
               </button>

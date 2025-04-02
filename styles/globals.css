@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+.md\:ml-64 {
+  margin-left: 0px;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
