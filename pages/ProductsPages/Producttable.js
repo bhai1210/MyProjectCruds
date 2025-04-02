@@ -149,8 +149,8 @@ export default function ProductList() {
       <h1 className="text-xl font-semibold text-gray-800 mb-1">Product</h1>
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
-        <p className="text-sm text-gray-500">Dashboard &gt; Product List</p>
     
+  
     
     
     
@@ -185,74 +185,149 @@ export default function ProductList() {
     
       </div>
 
-      <div className=''>
-
    
 
-      {/* Tabs */}
-      <div className="inline-flex flex-wrap items-center rounded-xl border border-gray-200 bg-white p-1 mb-6">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 text-sm font-medium rounded-lg transition ${
-              activeTab === tab ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+  
+
+      <div className="w-full">
+  {/* Wrapper for large/small screen behavior */}
+  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
+
+    {/* Tabs */}
+    <div className="inline-flex flex-wrap items-center rounded-xl border border-gray-200 bg-white p-1">
+      {tabs.map((tab) => (
+        <button
+          key={tab}
+          onClick={() => setActiveTab(tab)}
+          className={`px-4 py-2 text-sm font-medium rounded-lg transition ${
+            activeTab === tab
+              ? 'bg-blue-50 text-blue-600'
+              : 'text-gray-600 hover:bg-gray-50'
+          }`}
+        >
+          {tab}
+        </button>
+      ))}
+    </div>
+
+    {/* Filter Bar */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-auto">
+      {/* Search Input */}
+      <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-white text-gray-500">
+        <FaSearch />
+        <input
+          type="text"
+          placeholder="Search product…"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full bg-transparent outline-none text-sm"
+        />
       </div>
 
-      {/* Filter Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
-        <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-white text-gray-500">
-          <FaSearch />
-          <input
-            type="text"
-            placeholder="Search product…"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-transparent outline-none text-sm"
-          />
-        </div>
-
-        <div className="relative">
-          <button
-            onClick={() => setShowDatePicker(!showDatePicker)}
-            className="w-full flex items-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50"
-          >
-            <FaCalendarAlt />
-            {`${format(selectedDate[0].startDate, 'MMM dd')} - ${format(
-              selectedDate[0].endDate,
-              'MMM dd'
-            )}`}
-          </button>
-          {showDatePicker && (
-            <div className="absolute z-50 top-14 left-0">
-              <DateRange
-                editableDateInputs={true}
-                onChange={(item) => setSelectedDate([item.selection])}
-                moveRangeOnFirstSelection={false}
-                ranges={selectedDate}
-              />
-            </div>
-          )}
-        </div>
-
-        <div className="flex gap-2">
-          <button className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50">
-            <FaSlidersH />
-            Filters
-          </button>
-          <button className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50">
-            <FaColumns />
-            Edit Column
-          </button>
-        </div>
+      {/* Date Picker */}
+      <div className="relative">
+        <button
+          onClick={() => setShowDatePicker(!showDatePicker)}
+          className="w-full flex items-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50"
+        >
+          <FaCalendarAlt />
+          {`${format(selectedDate[0].startDate, 'MMM dd')} - ${format(
+            selectedDate[0].endDate,
+            'MMM dd'
+          )}`}
+        </button>
+        {showDatePicker && (
+          <div className="absolute z-50 top-14 left-0">
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setSelectedDate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={selectedDate}
+            />
+          </div>
+        )}
       </div>
 
+      {/* Filters and Columns */}
+      <div className="flex gap-2">
+        <button className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50">
+          <FaSlidersH />
+          Filters
+        </button>
+        <button className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50">
+          <FaColumns />
+          Edit Column
+        </button>
       </div>
+    </div>
+  </div>
+</div>
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
 
       {/* Table */}
       <div className="overflow-x-auto bg-white rounded-xl shadow-md border border-gray-100">
