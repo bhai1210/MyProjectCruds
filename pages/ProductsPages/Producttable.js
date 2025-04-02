@@ -150,21 +150,39 @@ export default function ProductList() {
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
         <p className="text-sm text-gray-500">Dashboard &gt; Product List</p>
-        <div className="flex flex-wrap  gap-2">
-          <button
-            onClick={handleExport}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-blue-600 bg-blue-50 hover:bg-blue-100 text-sm font-medium"
-          >
-            <FaDownload className="text-sm" />
-            Export
-          </button>
-          <Link href="/products/edit">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 text-sm font-medium">
-              <FaPlus className="text-sm" />
-              Add Product
-            </button>
-          </Link>
-        </div>
+    
+    
+    
+    
+    
+        <div className="w-full flex justify-end flex-wrap gap-2 mt-4">
+  {/* Export Button */}
+  <button
+    onClick={handleExport}
+    className="flex items-center gap-2 px-4 py-2 rounded-lg text-blue-600 bg-blue-50 hover:bg-blue-100 text-sm font-medium"
+  >
+    <FaDownload className="text-sm" />
+    Export
+  </button>
+
+  {/* Add Product Button */}
+  <Link href="/products/edit">
+    <button className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 text-sm font-medium">
+      <FaPlus className="text-sm" />
+      Add Product
+    </button>
+  </Link>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
       </div>
 
       <div className=''>

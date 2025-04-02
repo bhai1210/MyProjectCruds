@@ -198,55 +198,111 @@ const handlecancel = () => {
   
 
       {/* Breadcrumb */}
-      <div className="mb-6">
-        <p className="text-sm text-gray-400">
-          Dashboard &gt; Product List &gt; <span className="text-gray-700 font-medium">Add Product</span>
-        </p>
-
-        <div className='flex justify-between'>
-
-      
-        <h1 className="text-xl font-semibold text-gray-700 mt-2">Add Product</h1>
-   
+  
+  
+  
+  
 
   
+
+      <div className="mb-6 px-4 sm:px-6 lg:px-8">
+  {/* Breadcrumb */}
+  <p className="text-sm text-gray-400 mb-2">
+    Dashboard &gt; Product List &gt; <span className="text-gray-600 font-medium">Add Product</span>
+  </p>
+
+  {/* Header + Actions */}
+  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    {/* Page Title */}
+    <h1 className="text-2xl font-semibold text-gray-800">Add Product</h1>
+
+    {/* Buttons */}
+   
+   
+   
+    <div className="w-full flex justify-end flex-wrap gap-3 mt-4">
+  {/* Cancel Button */}
+  <button
+    type="button"
+    onClick={handlecancel}
+    className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100 transition"
+  >
+    <FaTimes className="text-sm" />
+    Cancel
+  </button>
+
+  {/* Save Button */}
+  <button
+    type="submit"
+    onClick={handleSubmit}
+    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+  >
+    <FaSave className="text-sm" />
+    Save Product
+  </button>
+</div>
+
+   
+   
+   
+   
+   
    
 
-        <div className="flex gap-4 mt-6">
-      {/* Cancel Button */}
-      <button
-        type="button"
-        onClick={handlecancel}
-        className="flex items-center gap-2 border border-gray-300 text-gray-500 px-5 py-2 rounded-md hover:bg-gray-100 transition"
-      >
-        <FaTimes className="text-sm" />
-        Cancel
-      </button>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  </div>
+</div>
 
-      {/* Save Product Button */}
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className="flex items-center gap-2 bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-500 transition"
-      >
-        <FaSave className="text-sm" />
-        Save Product
-      </button>
-    </div>
-   
-   
-   
-   
-   
-   
-   
-   
-   
+  
+  
 
-   
 
-    </div>
-      </div>
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
 
  
 
