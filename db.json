@@ -1,0 +1,448 @@
+{
+  "posts": [
+    {
+      "id": "0c7d",
+      "productName": "Smartwatch E2",
+      "description": "Smartwatch for men women notify you incoming calls, SMS notifications. when you connect the smartphone with fitness tracker...",
+      "category": "Watch",
+      "tags": [
+        "Watch",
+        "Gadget"
+      ],
+      "status": "Published",
+      "basePrice": "-0.01",
+      "discountType": "Fixed",
+      "discountPercentage": "0%",
+      "taxClass": "Tax Free",
+      "vatAmount": "0%",
+      "sku": "302002",
+      "barcode": "0984939101123",
+      "quantity": "124",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "0.25 kg",
+        "height": "10 cm",
+        "length": "10 cm",
+        "width": "7 cm"
+      }
+    },
+    {
+      "id": "20c8",
+      "productName": "Smartwatch E2",
+      "description": "Smartwatch for men women notify you incoming calls, SMS notifications. when you connect the smartphone with fitness tracker...",
+      "category": "Watch",
+      "tags": [
+        "Watch",
+        "Gadget"
+      ],
+      "status": "Draft",
+      "basePrice": "$400.00",
+      "discountType": "No Discount",
+      "discountPercentage": "0%",
+      "taxClass": "Tax Free",
+      "vatAmount": "0%",
+      "sku": "302002",
+      "barcode": "0984939101123",
+      "quantity": "124",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "0.25 kg",
+        "height": "10 cm",
+        "length": "10 cm",
+        "width": "7 cm"
+      }
+    },
+    {
+      "id": "2dac",
+      "productName": "gfgf",
+      "description": "fdfd",
+      "category": "Smartphone",
+      "tags": [
+        ""
+      ],
+      "status": "Published",
+      "basePrice": "32323",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "5454",
+      "barcode": "",
+      "quantity": "4343",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    },
+    {
+      "id": "4666",
+      "productName": "rahul",
+      "description": "bhavsar",
+      "category": "Smartphone",
+      "tags": [
+        ""
+      ],
+      "status": "Archived",
+      "basePrice": "34",
+      "discountType": "No Discount",
+      "discountPercentage": "",
+      "taxClass": "Tax Free",
+      "vatAmount": "",
+      "sku": "3",
+      "barcode": "",
+      "quantity": "54",
+      "variants": [
+        {
+          "type": "Color",
+          "value": "Black"
+        },
+        {
+          "type": "Color",
+          "value": "Gray"
+        }
+      ],
+      "shipping": {
+        "weight": "",
+        "height": "",
+        "length": "",
+        "width": ""
+      }
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "statstics": {
+    "totalproject": "12",
+    "totalusers": "87",
+    "reports": "45",
+    "analytics": "78"
+  },
+  "target": {
+    "target": "50",
+    "revenue": "48",
+    "Today": "56"
+  },
+  "monthlyData": [
+    {
+      "month": "Jan",
+      "revenue": 800,
+      "sales": 600,
+      "id": "1fc6"
+    },
+    {
+      "month": "Feb",
+      "revenue": 700,
+      "sales": 500,
+      "id": "e66b"
+    },
+    {
+      "month": "Mar",
+      "revenue": 900,
+      "sales": 700,
+      "id": "0002"
+    },
+    {
+      "month": "Apr",
+      "revenue": 750,
+      "sales": 950,
+      "id": "f26c"
+    },
+    {
+      "month": "May",
+      "revenue": 600,
+      "sales": 680,
+      "id": "83a0"
+    },
+    {
+      "month": "Jun",
+      "revenue": 820,
+      "sales": 620,
+      "id": "9994"
+    },
+    {
+      "month": "Jul",
+      "revenue": 950,
+      "sales": 700,
+      "id": "c91f"
+    },
+    {
+      "month": "Aug",
+      "revenue": 780,
+      "sales": 690,
+      "id": "df13"
+    },
+    {
+      "month": "Sep",
+      "revenue": 850,
+      "sales": 540,
+      "id": "6996"
+    },
+    {
+      "month": "Oct",
+      "revenue": 620,
+      "sales": 500,
+      "id": "66a7"
+    },
+    {
+      "month": "Nov",
+      "revenue": 710,
+      "sales": 750,
+      "id": "43e3"
+    },
+    {
+      "month": "Dec",
+      "revenue": 680,
+      "sales": 800,
+      "id": "27e7"
+    }
+  ],
+  "pieData": [
+    {
+      "name": "Official Website",
+      "value": 10000,
+      "id": "ea09"
+    },
+    {
+      "name": "Offline Store",
+      "value": 10000,
+      "id": "e4fa"
+    },
+    {
+      "name": "Amazon Store",
+      "value": 10000,
+      "id": "ce05"
+    },
+    {
+      "name": "Reseller",
+      "value": 10000,
+      "id": "995c"
+    }
+  ],
+  "topProducts": [
+    {
+      "name": "Logic+ Wireless Mouse",
+      "type": "Mouse",
+      "amount": 1240,
+      "id": "2a45"
+    },
+    {
+      "name": "PS Wireless Controller",
+      "type": "Smartphone",
+      "amount": 1189,
+      "id": "e88d"
+    },
+    {
+      "name": "Ximi Mechanical Keyboard",
+      "type": "Smartphone",
+      "amount": 1100,
+      "id": "58c6"
+    },
+    {
+      "name": "Audia Tech Earphone",
+      "type": "Earphone",
+      "amount": 908,
+      "id": "53e9"
+    },
+    {
+      "name": "Sams S14 Pro",
+      "type": "Tablet",
+      "amount": 900,
+      "id": "9af2"
+    },
+    {
+      "name": "Sams A13 5G",
+      "type": "Smartphone",
+      "amount": 870,
+      "id": "1774"
+    },
+    {
+      "name": "Jsound P01 TWS",
+      "type": "Earphone",
+      "amount": 870,
+      "id": "1510"
+    }
+  ],
+  "topCategories": [
+    {
+      "name": "Smartphone",
+      "icon": "FaMobileAlt",
+      "count": 1509,
+      "change": "+12%",
+      "color": "text-cyan-500",
+      "id": "2434"
+    },
+    {
+      "name": "Tablet",
+      "icon": "FaTabletAlt",
+      "count": 1460,
+      "change": "-5%",
+      "color": "text-red-500",
+      "id": "d6b9"
+    },
+    {
+      "name": "Earphone",
+      "icon": "FaHeadphones",
+      "count": 1229,
+      "change": "0%",
+      "color": "text-gray-400",
+      "id": "6a4d"
+    },
+    {
+      "name": "Laptop & PC",
+      "icon": "FaLaptop",
+      "count": 982,
+      "change": "+19%",
+      "color": "text-pink-500",
+      "id": "7a52"
+    },
+    {
+      "name": "Mouse",
+      "icon": "FaMouse",
+      "count": 791,
+      "change": "-25%",
+      "color": "text-blue-500",
+      "id": "e859"
+    },
+    {
+      "name": "Hardisk & USB Drive",
+      "icon": "FaHdd",
+      "count": 679,
+      "change": "+11%",
+      "color": "text-yellow-500",
+      "id": "f4ba"
+    },
+    {
+      "name": "Camera",
+      "icon": "FaCamera",
+      "count": 679,
+      "change": "+11%",
+      "color": "text-gray-600",
+      "id": "8719"
+    }
+  ],
+  "orders": [
+    {
+      "product": "Handmade Pouch",
+      "sub": "+3 other products",
+      "customer": "John Bushmill",
+      "email": "Johnb@mail.com",
+      "total": "$121.00",
+      "status": "Processing",
+      "id": "e169"
+    },
+    {
+      "product": "Smartwatch E2",
+      "sub": "+1 other products",
+      "customer": "Ilham Budi Agung",
+      "email": "ilahmbudi@mail.com",
+      "total": "$590.00",
+      "status": "Processing",
+      "id": "d9dc"
+    },
+    {
+      "product": "Smartwatch E1",
+      "customer": "Mohammad Karim",
+      "email": "m_karim@mail.com",
+      "total": "$125.00",
+      "status": "Shipped",
+      "id": "a141"
+    },
+    {
+      "product": "Headphone G1 Pro",
+      "sub": "+1 other products",
+      "customer": "Linda Blair",
+      "email": "lindablair@mail.com",
+      "total": "$348.00",
+      "status": "Shipped",
+      "id": "0ac5"
+    },
+    {
+      "product": "Iphone X",
+      "customer": "Josh Adam",
+      "email": "josh_adam@mail.com",
+      "total": "$607.00",
+      "status": "Delivered",
+      "id": "89cc"
+    }
+  ],
+  "customers": [
+    {
+      "name": "USA",
+      "customers": "1,240",
+      "growth": 80,
+      "color": "bg-cyan-500",
+      "id": "ed49"
+    },
+    {
+      "name": "Japan",
+      "customers": "1,240",
+      "growth": 60,
+      "color": "bg-orange-400",
+      "id": "1c58"
+    },
+    {
+      "name": "France",
+      "customers": "1,240",
+      "growth": 49,
+      "color": "bg-yellow-400",
+      "id": "a08b"
+    },
+    {
+      "name": "Germany",
+      "customers": "1,240",
+      "growth": 100,
+      "color": "bg-blue-600",
+      "id": "cf54"
+    },
+    {
+      "name": "South Korea",
+      "customers": "1,240",
+      "growth": 50,
+      "color": "bg-red-400",
+      "id": "4993"
+    }
+  ]
+}
