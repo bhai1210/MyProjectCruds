@@ -26,7 +26,7 @@ function Page() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:5000/posts/${id}`)
+        .get(`https://json-server-backends.onrender.com/posts/${id}`)
         .then((res) => {
           setFormData(res.data);
           setLoading(false);
@@ -47,7 +47,7 @@ function Page() {
     e.preventDefault();
 
     try {
-      await axios.patch(`http://localhost:5000/posts/${id}`, formData);
+      await axios.patch(`https://json-server-backends.onrender.com/posts/${id}`, formData);
 
       toast.success('Product updated successfully!', {
         position: 'top-right',

@@ -152,7 +152,7 @@ if (hasError) return;
   console.log(productData,"this is my full object")
 
   try {
-    const response = await axios.post("http://localhost:5000/posts", productData, {
+    const response = await axios.post("https://json-server-backends.onrender.com/posts", productData, {
       headers: { "Content-Type": "application/json" }
     });
 

@@ -28,17 +28,17 @@ export default function SalesSource() {
   const [topCategories, setTopCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/pieData")
+    fetch("https://json-server-backends.onrender.com/pieData")
       .then((res) => res.json())
       .then(setPieData)
       .catch(console.error);
 
-    fetch("http://localhost:5000/topProducts")
+    fetch("https://json-server-backends.onrender.com/topProducts")
       .then((res) => res.json())
       .then(setTopProducts)
       .catch(console.error);
 
-    fetch("http://localhost:5000/topCategories")
+    fetch("https://json-server-backends.onrender.com/topCategories")
       .then((res) => res.json())
       .then((data) => {
         const withIcons = data.map(item => ({

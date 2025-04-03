@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch monthly chart data
-    fetch("http://localhost:5000/statstics")
+    fetch("https://json-server-backends.onrender.com/statstics")
       .then(res => res.json())
       .then(data => setChartData(data))
       .catch(console.error);

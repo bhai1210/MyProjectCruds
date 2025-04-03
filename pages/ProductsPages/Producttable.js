@@ -53,7 +53,7 @@ export default function ProductList() {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/posts');
+      const res = await axios.get('https://json-server-backends.onrender.com/posts');
       setProductList(res.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -72,7 +72,7 @@ export default function ProductList() {
     const confirmDelete = window.confirm('Are you sure you want to delete this product?');
     if (!confirmDelete) return;
     try {
-      await axios.delete(`http://localhost:5000/posts/${id}`);
+      await axios.delete(`https://json-server-backends.onrender.com/posts/${id}`);
       fetchData();
       toast.success('Product Deleted successfully!', {
         position: 'top-right',

@@ -21,11 +21,20 @@ export default function RecentOrder() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
+
+   
+   
+   
+   
+   
+   
+   
+    
     const fetchData = async () => {
       try {
         const [ordersRes, customersRes] = await Promise.all([
-          axios.get('http://localhost:5000/orders'),
-          axios.get('http://localhost:5000/customers'),
+          axios.get('https://json-server-backends.onrender.com/orders'),
+          axios.get('https://json-server-backends.onrender.com/customers'),
         ]);
 
         setOrders(ordersRes.data);

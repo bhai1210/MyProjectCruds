@@ -22,13 +22,13 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch monthly chart data
-    fetch("http://localhost:5000/monthlyData")
+    fetch("https://json-server-backends.onrender.com/monthlyData")
       .then(res => res.json())
       .then(data => setChartData(data))
       .catch(console.error);
 
     // Fetch target data
-    fetch("http://localhost:5000/target")
+    fetch("https://json-server-backends.onrender.com/target")
       .then(res => res.json())
       .then(data => setTargetData(data))
       .catch(console.error);
