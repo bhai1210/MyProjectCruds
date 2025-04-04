@@ -48,94 +48,67 @@ export default function Home() {
 
       
       
-      
-
-        {/* Boxes Row */}
-        <div className=" md:relative md:left-[20px] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          {/* Box 1 */}
-          <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
-            <div>
-              <h3 className="text-gray-500 text-sm">Total Projects</h3>
-              <h2 className="text-2xl font-bold pt-2 text-gray-800">6784</h2>
-              <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
-            </div>
-            <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
-              <FaProjectDiagram size={24} />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
+<div className="relative  ml-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+  {/* Box 1 */}
+  <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
     <div>
-      <h3 className="text-gray-500 text-sm">In progress</h3>
-      <h2 className="text-2xl font-bold pt-2 text-gray-800">1920</h2>
-      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+      <h3 className="text-gray-500 text-sm">Total Projects</h3>
+      <h2 className="text-2xl font-bold pt-2 text-gray-800">6784</h2>
+      <p className="text-xs mt-1 pt-2 font-semibold">
+        10% ▲ <label className="ml-1"> +$150 today</label>
+      </p>
     </div>
     <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
-    <FaUsers size={24} />
+      <FaProjectDiagram size={24} />
     </div>
   </div>
 
+  {/* Box 2 */}
+  <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
+    <div>
+      <h3 className="text-gray-500 text-sm">In Progress</h3>
+      <h2 className="text-2xl font-bold pt-2 text-gray-800">1920</h2>
+      <p className="text-xs mt-1 pt-2 font-semibold">
+        10% ▲ <label className="ml-1"> +$150 today</label>
+      </p>
+    </div>
+    <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
+      <FaUsers size={24} />
+    </div>
+  </div>
+
+  {/* Box 3 */}
   <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
     <div>
       <h3 className="text-gray-500 text-sm">Finished</h3>
       <h2 className="text-2xl font-bold pt-2 text-gray-800">4412</h2>
-      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+      <p className="text-xs mt-1 pt-2 font-semibold">
+        10% ▲ <label className="ml-1"> +$150 today</label>
+      </p>
     </div>
     <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
-    <FaFileAlt size={24} />
+      <FaFileAlt size={24} />
     </div>
   </div>
 
+  {/* Box 4 */}
   <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
     <div>
       <h3 className="text-gray-500 text-sm">Unfinished</h3>
       <h2 className="text-2xl font-bold pt-2 text-gray-800">329</h2>
-      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+      <p className="text-xs mt-1 pt-2 font-semibold">
+        10% ▲ <label className="ml-1"> +$150 today</label>
+      </p>
     </div>
     <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
-    <FaChartPie size={24} />
+      <FaChartPie size={24} />
     </div>
   </div>
+</div>
 
 
-          {/* Box 2 */}
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
-          {/* Box 3 */}
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-
-          {/* Box 4 */}
-         
-         
-         
-         
-         
-         
-         
-        
-         
-         
-        </div>
-
-        {/* Dashboard Section */}
+        {/* Boxes Row */}
+  {/* Dashboard Section */}
         <section className="mb-6">
           <Dashboard />
         </section>
