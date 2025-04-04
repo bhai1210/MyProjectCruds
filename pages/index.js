@@ -67,7 +67,7 @@ export default function Home() {
           {/* Box 2 */}
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
             <div>
-              <h3 className="text-gray-500 text-sm">Total Users</h3>
+              <h3 className="text-gray-500 text-sm">In Progress</h3>
               <h2 className="text-2xl font-bold text-gray-800">{chartData?.totalusers}</h2>
               <p className="text-xs text-gray-400 mt-1">5 New this week</p>
             </div>
@@ -79,7 +79,7 @@ export default function Home() {
           {/* Box 3 */}
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
             <div>
-              <h3 className="text-gray-500 text-sm">Reports</h3>
+              <h3 className="text-gray-500 text-sm">Finished</h3>
               <h2 className="text-2xl font-bold text-gray-800">{chartData?.reports}</h2>
               <p className="text-xs text-gray-400 mt-1">Updated 2 days ago</p>
             </div>
@@ -91,7 +91,7 @@ export default function Home() {
           {/* Box 4 */}
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
             <div>
-              <h3 className="text-gray-500 text-sm">Analytics</h3>
+              <h3 className="text-gray-500 text-sm">Unfinished</h3>
               <h2 className="text-2xl font-bold text-gray-800">{chartData?.analytics}</h2>
               <p className="text-xs text-gray-400 mt-1">Performance this month</p>
             </div>
