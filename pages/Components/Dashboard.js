@@ -21,7 +21,7 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    // Fetch chart data
+    // Fetch monthly chart data
     fetch("https://json-server-backends.onrender.com/monthlyData")
       .then((res) => res.json())
       .then((data) => setChartData(data))
@@ -34,16 +34,23 @@ const Dashboard = () => {
       .catch(console.error);
   }, []);
 
-  const { percentage, todayRevenue, target, revenue, today, growth } =
-    targetData;
+  // Destructure with default fallbacks
+  const {
+    percentage = 0,
+    todayRevenue = 0,
+    target = 0,
+    revenue = 0,
+    today = 0,
+    growth = 0,
+  } = targetData;
 
-  const angle = (percentage / 100) * 180; // convert % to semi-circle angle
-  const strokeOffset = 125.6 - (125.6 * percentage) / 100; // adjust stroke-dashoffset
+  // Convert percentage to stroke offset for the semicircle
+  const strokeOffset = 125.6 - (125.6 * percentage) / 100;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
       {/* Target Section */}
-      <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
         <h2 className="text-lg font-semibold text-gray-800">Target</h2>
         <p className="text-sm text-gray-400">Revenue Target</p>
 
@@ -67,7 +74,7 @@ const Dashboard = () => {
           </svg>
           <div className="absolute top-6 left-1/2 transform -translate-x-1/2 text-center">
             <p className="text-xl font-semibold text-gray-800">
-              {percentage.toFixed(2)}%
+              {typeof percentage === "number" ? percentage.toFixed(2) : "0.00"}%
             </p>
             <p className="text-green-500 text-sm font-medium">
               {growth >= 0 ? `+${growth}%` : `${growth}%`}
@@ -107,7 +114,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Statistic Chart Section */}
+      {/* Statistic Section */}
       <div className="bg-white rounded-xl shadow-md p-6">
         <h2 className="text-lg font-semibold text-gray-800">Statistic</h2>
         <p className="text-sm text-gray-400 mb-4">Revenue and Sales</p>
