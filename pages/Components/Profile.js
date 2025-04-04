@@ -10,7 +10,7 @@ import {
 
 export default function Profile() {
   return (
-    <div className="w-full bg-white px-4 py-3 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div className="w-full  px-4 py-3  flex flex-col sm:flex-row items-center justify-between gap-4">
       {/* Search Section */}
       <div className="flex items-center gap-2 w-full sm:w-auto text-gray-500 border border-gray-200 px-2 py-1 rounded-md">
         <FaSearch className="text-sm" />
