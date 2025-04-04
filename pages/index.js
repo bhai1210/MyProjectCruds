@@ -36,13 +36,19 @@ export default function Home() {
       <div className="min-h-full flex flex-col justify-between">
 
         <Profile />
-       <div className="mb-6 mt-10 ml-[15px]">
-         <h2 className="text-2xl md:relative md:left-[15px] font-semibold">Welcome Back, Jenil!</h2>
-         <p className="text-gray-600 mt-1 md:relative md:left-[15px]">
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enjoy your
-           admin panel!
-         </p>
-       </div>
+      
+      
+      
+        <div className="mb-6 mt-10 ml-[15px]">
+  <h2 className="text-xl md:text-2xl font-semibold md:ml-[15px]">Welcome Back, Jenil!</h2>
+  <p className="text-base md:text-lg text-gray-800 mt-1 md:ml-[15px]">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enjoy your admin panel!
+  </p>
+</div>
+
+      
+      
+      
 
         {/* Boxes Row */}
         <div className=" md:relative md:left-[20px] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">

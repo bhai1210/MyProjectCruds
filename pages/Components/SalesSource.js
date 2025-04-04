@@ -57,7 +57,7 @@ export default function SalesSource() {
         <h2 className="text-lg font-semibold text-gray-700">Sales Source</h2>
         <p className="text-sm text-gray-400 mb-4">Revenue Source</p>
 
-        <div className="flex items-center">
+        <div className="flex flex-col items-center">
           <div className="w-40 h-40 relative">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>

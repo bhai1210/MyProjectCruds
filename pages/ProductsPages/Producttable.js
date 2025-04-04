@@ -18,7 +18,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
-
+import { useRouter } from 'next/router';
 const getStatusBadge = (status) => {
   switch (status) {
     case 'Published':
@@ -43,9 +43,14 @@ export default function ProductList() {
   const [sortKey, setSortKey] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
   const [showDatePicker, setShowDatePicker] = useState(false);
+    const router = useRouter();
   const [selectedDate, setSelectedDate] = useState([
     { startDate: new Date(), endDate: new Date(), key: 'selection' },
   ]);
+
+  const [editRowId, setEditRowId] = useState(null);
+const [editFormData, setEditFormData] = useState({});
+
 
   const productsPerPage = 5;
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -74,10 +79,16 @@ export default function ProductList() {
     try {
       await axios.delete(`https://json-server-backends.onrender.com/posts/${id}`);
       fetchData();
+  
       toast.success('Product Deleted successfully!', {
         position: 'top-right',
         autoClose: 3000,
       });
+
+      setTimeout(() => {
+        router.push("/products/table")
+      },1000);
+    
     } catch (error) {
       console.error('Error deleting product:', error);
       alert('Failed to delete product.');
@@ -125,6 +136,9 @@ export default function ProductList() {
   const filteredProducts = productList.filter((item) =>
     item.productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.quantity.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.basePrice.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.status.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.category.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -143,10 +157,49 @@ export default function ProductList() {
   const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
 
+
+
+  const handleEditClick = (product) => {
+    setEditRowId(product.id);
+    setEditFormData({ ...product });
+  };
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditFormData({ ...editFormData, [name]: value });
+  };
+
+
+  const handleSaveClick = async () => {
+    try {
+      await axios.put(`https://json-server-backends.onrender.com/posts/${editRowId}`, editFormData);
+      toast.success('Product updated successfully!');
+      fetchData(); // refresh data
+      setEditRowId(null); // exit edit mode
+    } catch (error) {
+      console.error('Update failed:', error);
+      toast.error('Failed to update product.');
+    }
+  };
+
+
+
+  const [editColumnMode, setEditColumnMode] = useState(false);
+
+  
+  
+  
+
   return (
     <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
       <ToastContainer />
-      <h1 className="text-xl font-semibold text-gray-800 mb-1">Product</h1>
+
+
+
+<div className="mb-6 mt-2">
+  <h1 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 ml-[15px]">Product</h1>
+</div>
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
     
@@ -254,10 +307,29 @@ export default function ProductList() {
           <FaSlidersH />
           Filters
         </button>
-        <button className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50">
-          <FaColumns />
-          Edit Column
-        </button>
+       
+       
+        <button
+  onClick={() => {
+    setEditColumnMode(!editColumnMode);
+    toast.info(`Edit Column Mode ${!editColumnMode ? 'On' : 'Off'}`, {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
+  }}
+  className="flex-grow flex items-center justify-center gap-2 px-3 py-2 border rounded-md text-sm text-gray-500 bg-white hover:bg-gray-50"
+>
+  <FaColumns />
+  {editColumnMode ? "Edit Coulmn" :"Edit with Form"}
+
+</button>
+
+       
       </div>
     </div>
   </div>
@@ -331,6 +403,7 @@ export default function ProductList() {
 
       {/* Table */}
       <div className="overflow-x-auto bg-white rounded-xl shadow-md border border-gray-100">
+
         <div className="w-full min-w-[640px]">
           <table className="w-full text-sm">
             <thead className="bg-gray-50 text-gray-500 text-left">
@@ -351,39 +424,216 @@ export default function ProductList() {
                 <th className="p-4 cursor-pointer" onClick={() => handleSort('basePrice')}>
                   Price {sortKey === 'basePrice' && (sortOrder === 'asc' ? '▲' : '▼')}
                 </th>
-                <th className="p-4">Status</th>
+                <th className="p-4"  onClick={() => handleSort('status')}> Status{sortKey === 'status' && (sortOrder === 'asc' ? '▲' : '▼')}</th>
                 <th className="p-4">Action</th>
               </tr>
             </thead>
+ 
+ 
+ 
+ 
             <tbody>
-              {currentProducts.map((item, index) => (
-                <tr key={index} className="border-t hover:bg-gray-50">
-                  <td className="p-4"><input type="checkbox" /></td>
-                  <td className="p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gray-200 rounded" />
-                    <div>
-                      <p className="font-medium">{item.productName}</p>
-                      <p className="text-xs text-gray-400">{item.variants?.length || 0} Variants</p>
-                    </div>
-                  </td>
-                  <td className="p-4 text-blue-600 cursor-pointer">{item.sku}</td>
-                  <td className="p-4">{item.category}</td>
-                  <td className="p-4">{item.quantity}</td>
-                  <td className="p-4">{item.basePrice}</td>
-                  <td className="p-4">
-                    <span className={`text-xs font-medium px-3 py-1 rounded-full ${getStatusBadge(item.status)}`}>
-                      {item.status}
-                    </span>
-                  </td>
-                  <td className="p-4 flex items-center gap-3 text-gray-500">
-                    <Link href={`/products/edit/${item.id}`}>
-                      <FaEdit className="cursor-pointer hover:text-green-500" />
-                    </Link>
-                    <FaTrash onClick={() => handleDelete(item.id)} className="cursor-pointer hover:text-red-500" />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+  {currentProducts.map((item, index) => (
+    <tr key={index} className="border-t hover:bg-gray-50">
+      <td className="p-4"><input type="checkbox" /></td>
+
+      {/* Product Name */}
+      <td className="p-4 flex items-center gap-3">
+        <div className="w-10 h-10 bg-gray-200 rounded" />
+        <div>
+          {editRowId === item.id ? (
+            <input
+              type="text"
+              name="productName"
+              value={editFormData.productName}
+              onChange={handleInputChange}
+              className="border px-2 py-1 rounded w-full"
+            />
+          ) : (
+            <>
+              <p className="text-sm md:text-base font-semibold text-gray-800">{item.productName}</p>
+              <p className="text-xs text-gray-500">{item.variants?.length || 0} Variants</p>
+            </>
+          )}
+        </div>
+      </td>
+
+      {/* SKU */}
+      <td className="p-4 text-sm font-medium text-gray-800">
+        {editRowId === item.id ? (
+          <input
+            type="text"
+            name="sku"
+            value={editFormData.sku}
+            onChange={handleInputChange}
+            className="border px-2 py-1 rounded w-full"
+          />
+        ) : (
+          item.sku
+        )}
+      </td>
+
+      {/* Category */}
+      <td className="p-4 text-sm font-medium text-gray-800">
+        {editRowId === item.id ? (
+          <input
+            type="text"
+            name="category"
+            value={editFormData.category}
+            onChange={handleInputChange}
+            className="border px-2 py-1 rounded w-full"
+          />
+        ) : (
+          item.category
+        )}
+      </td>
+
+      {/* Quantity */}
+      <td className="p-4 text-sm font-medium text-gray-800">
+        {editRowId === item.id ? (
+          <input
+            type="number"
+            name="quantity"
+            value={editFormData.quantity}
+            onChange={handleInputChange}
+            className="border px-2 py-1 rounded w-full"
+          />
+        ) : (
+          item.quantity
+        )}
+      </td>
+
+      {/* Base Price */}
+      <td className="p-4 text-sm font-medium text-gray-800">
+        {editRowId === item.id ? (
+          <input
+            type="number"
+            name="basePrice"
+            value={editFormData.basePrice}
+            onChange={handleInputChange}
+            className="border px-2 py-1 rounded w-full"
+          />
+        ) : (
+          item.basePrice
+        )}
+      </td>
+
+      {/* Status */}
+      <td className="p-4">
+        {editRowId === item.id ? (
+          <select
+            name="status"
+            value={editFormData.status}
+            onChange={handleInputChange}
+            className="border px-2 py-1 rounded w-full"
+          >
+            <option value="Published">Published</option>
+            <option value="Draft">Draft</option>
+            <option value="Low Stock">Low Stock</option>
+            <option value="Out of Stock">Out of Stock</option>
+          </select>
+        ) : (
+          <span className={`text-xs font-semibold px-3 py-1 rounded-full ${getStatusBadge(item.status)}`}>
+            {item.status}
+          </span>
+        )}
+      </td>
+
+      {/* Action */}
+      <td className="p-4 flex items-center gap-3 text-gray-500">
+        {editColumnMode ? (
+          editRowId === item.id ? (
+            <>
+              <button onClick={handleSaveClick} className="text-green-500 font-semibold">Save</button>
+              <button onClick={() => setEditRowId(null)} className="text-gray-400 font-semibold">Cancel</button>
+            </>
+          ) : (
+            <>
+              <FaEdit onClick={() => handleEditClick(item)} className="cursor-pointer hover:text-green-500" />
+              <FaTrash onClick={() => handleDelete(item.id)} className="cursor-pointer hover:text-red-500" />
+            </>
+          )
+        ) : (
+          <Link className='flex flex-row gap-3' href={`/products/edit/${item.id}`}>
+            <FaEdit className="cursor-pointer hover:text-green-500" />
+            <FaTrash onClick={() => handleDelete(item.id)} className="cursor-pointer hover:text-red-500" />
+          </Link>
+        )}
+      </td>
+    </tr>
+  ))}
+</tbody>
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
           </table>
         </div>
 

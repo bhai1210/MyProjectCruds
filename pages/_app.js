@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
       </div>
 
       {/* Main Content */}
-      <main className={`flex-1 p-4 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-64' : ''} md:ml-64 w-full`}>
+      <main className={`flex-1 pt-[0px] transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-64' : ''} md:ml-64 w-full`}>
         <Component {...pageProps} />
       </main>
     </div>

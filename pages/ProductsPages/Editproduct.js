@@ -214,7 +214,7 @@ const handlecancel = () => {
   {/* Header + Actions */}
   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
     {/* Page Title */}
-    <h1 className="text-2xl font-semibold text-gray-800">Add Product</h1>
+    <h1 className="text-2xl font-semibold text-gray-800">Addproduct</h1>
 
     {/* Buttons */}
    
