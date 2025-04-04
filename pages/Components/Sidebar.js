@@ -85,12 +85,12 @@ export default function SidebarDrawer({ onLinkClick }) {
                   Product
                 </span>
               </Link>
-              <Link onClick={onLinkClick}   href="">
+              <Link onClick={onLinkClick}   href="/products/category">
                 <span className="block py-2 text-gray-600 hover:text-black">
                   Categories
                 </span>
               </Link>
-              <Link  onClick={onLinkClick}  href="">
+              <Link  onClick={onLinkClick}  href="/products/mainorder">
                 <span className="flex justify-between py-2 text-gray-600 hover:text-black">
                   <span>Orders</span>
                   <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full">
@@ -98,7 +98,7 @@ export default function SidebarDrawer({ onLinkClick }) {
                   </span>
                 </span>
               </Link>
-              <Link onClick={onLinkClick}  href="">
+              <Link onClick={onLinkClick}  href="/products/maincustomer">
                 <span className="block py-2 text-gray-600 hover:text-black">
                   Customer
                 </span>
@@ -108,7 +108,7 @@ export default function SidebarDrawer({ onLinkClick }) {
         </div>
 
         {/* Project */}
-        <Link onClick={onLinkClick}  href="">
+        <Link onClick={onLinkClick}  href="/products/mainproject">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/projects")
@@ -119,10 +119,10 @@ export default function SidebarDrawer({ onLinkClick }) {
             <FaClock className="text-lg" />
             Project
           </span>
-        </Link>
+        </Link> 
 
         {/* Contact dropdown */}
-        <div>
+        <div  href="/products/maincontact">
           <button
             onClick={() => setOpenContact(!openContact)}
             className={`w-full flex items-center justify-between px-4 py-2 rounded ${
@@ -144,7 +144,7 @@ export default function SidebarDrawer({ onLinkClick }) {
         </div>
 
         {/* Static Items */}
-        <Link onClick={onLinkClick}  href="">
+        <Link onClick={onLinkClick}  href="/products/mainfilemanager">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/file-manager")
@@ -157,7 +157,7 @@ export default function SidebarDrawer({ onLinkClick }) {
           </span>
         </Link>
 
-        <Link onClick={onLinkClick}  href="">
+        <Link onClick={onLinkClick}  href="/products/mainchat">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/chat")
@@ -170,7 +170,7 @@ export default function SidebarDrawer({ onLinkClick }) {
           </span>
         </Link>
 
-        <Link  onClick={onLinkClick}  href="">
+        <Link  onClick={onLinkClick}  href="/products/maincalender">
           <span
             className={`flex items-center gap-3 px-4 py-2 rounded ${
               isActive("/calendar")
