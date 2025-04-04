@@ -55,7 +55,7 @@ export default function Home() {
         <div>
           <h3 className="text-gray-500 text-base sm:text-sm">Total Projects</h3>
           <h2 className="text-xl sm:text-2xl font-bold pt-1 text-gray-800">6784</h2>
-          <p className="text-sm sm:text-xs mt-1 font-semibold">
+          <p className="text-base md:text-md text-gray-800 mt-1 ">
             10% ▲ <label className="ml-1"> +$150 today</label>
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Home() {
         <div>
           <h3 className="text-gray-500 text-base sm:text-sm">In Progress</h3>
           <h2 className="text-xl sm:text-2xl font-bold pt-1 text-gray-800">1920</h2>
-          <p className="text-sm sm:text-xs mt-1 font-semibold">
+          <p className="text-base md:text-md text-gray-800 mt-1 ">
             10% ▲ <label className="ml-1"> +$150 today</label>
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function Home() {
         <div>
           <h3 className="text-gray-500 text-base sm:text-sm">Finished</h3>
           <h2 className="text-xl sm:text-2xl font-bold pt-1 text-gray-800">4412</h2>
-          <p className="text-sm sm:text-xs mt-1 font-semibold">
+          <p className="text-base md:text-md text-gray-800 mt-1 ">
             10% ▲ <label className="ml-1"> +$150 today</label>
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function Home() {
         <div>
           <h3 className="text-gray-500 text-base sm:text-sm">Unfinished</h3>
           <h2 className="text-xl sm:text-2xl font-bold pt-1 text-gray-800">329</h2>
-          <p className="text-sm sm:text-xs mt-1 font-semibold">
+          <p className="text-base md:text-md text-gray-800 mt-1 ">
             10% ▲ <label className="ml-1"> +$150 today</label>
           </p>
         </div>
