@@ -42,7 +42,7 @@ export default function Home() {
         <div className="mb-6 mt-2 ml-[15px]">
   <h2 className="text-xl md:text-2xl  text-gray-800 font-semibold md:ml-[15px]">Welcome Back, Jenil!</h2>
   <p className="text-base md:text-lg text-gray-800 mt-1 md:ml-[15px]">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enjoy your admin panel!
+    Lorem ipsum dolor sit amet, welcome back jenil
   </p>
 </div>
 
@@ -56,49 +56,83 @@ export default function Home() {
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
             <div>
               <h3 className="text-gray-500 text-sm">Total Projects</h3>
-              <h2 className="text-2xl font-bold text-gray-800">{chartData?.totalproject}</h2>
-              <p className="text-xs text-gray-400 mt-1">3 New this month</p>
+              <h2 className="text-2xl font-bold pt-2 text-gray-800">6784</h2>
+              <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
             </div>
-            <div className="bg-red-100 text-red-500 p-3 rounded-full">
+            <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
               <FaProjectDiagram size={24} />
             </div>
           </div>
 
-          {/* Box 2 */}
           <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
-            <div>
-              <h3 className="text-gray-500 text-sm">In Progress</h3>
-              <h2 className="text-2xl font-bold text-gray-800">{chartData?.totalusers}</h2>
-              <p className="text-xs text-gray-400 mt-1">5 New this week</p>
-            </div>
-            <div className="bg-blue-100 text-blue-500 p-3 rounded-full">
-              <FaUsers size={24} />
-            </div>
-          </div>
+    <div>
+      <h3 className="text-gray-500 text-sm">In progress</h3>
+      <h2 className="text-2xl font-bold pt-2 text-gray-800">1920</h2>
+      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+    </div>
+    <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
+    <FaUsers size={24} />
+    </div>
+  </div>
+
+  <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
+    <div>
+      <h3 className="text-gray-500 text-sm">Finished</h3>
+      <h2 className="text-2xl font-bold pt-2 text-gray-800">4412</h2>
+      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+    </div>
+    <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
+    <FaFileAlt size={24} />
+    </div>
+  </div>
+
+  <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
+    <div>
+      <h3 className="text-gray-500 text-sm">Unfinished</h3>
+      <h2 className="text-2xl font-bold pt-2 text-gray-800">329</h2>
+      <p className="text-xs  mt-1 pt-2 font-semibold">10%&nbsp;▲ <label className="ml-1"> +$150 today</label></p>
+    </div>
+    <div className="bg-red-100 relative bottom-[25px] text-red-500 p-3 rounded-[10px]">
+    <FaChartPie size={24} />
+    </div>
+  </div>
+
+
+          {/* Box 2 */}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
           {/* Box 3 */}
-          <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
-            <div>
-              <h3 className="text-gray-500 text-sm">Finished</h3>
-              <h2 className="text-2xl font-bold text-gray-800">{chartData?.reports}</h2>
-              <p className="text-xs text-gray-400 mt-1">Updated 2 days ago</p>
-            </div>
-            <div className="bg-green-100 text-green-500 p-3 rounded-full">
-              <FaFileAlt size={24} />
-            </div>
-          </div>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 
           {/* Box 4 */}
-          <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition duration-300">
-            <div>
-              <h3 className="text-gray-500 text-sm">Unfinished</h3>
-              <h2 className="text-2xl font-bold text-gray-800">{chartData?.analytics}</h2>
-              <p className="text-xs text-gray-400 mt-1">Performance this month</p>
-            </div>
-            <div className="bg-yellow-100 text-yellow-500 p-3 rounded-full">
-              <FaChartPie size={24} />
-            </div>
-          </div>
+         
+         
+         
+         
+         
+         
+         
+        
+         
+         
         </div>
 
         {/* Dashboard Section */}
