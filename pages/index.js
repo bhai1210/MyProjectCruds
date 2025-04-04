@@ -40,7 +40,7 @@ export default function Home() {
       
       
         <div className="mb-6 mt-10 ml-[15px]">
-  <h2 className="text-xl md:text-2xl font-semibold md:ml-[15px]">Welcome Back, Jenil!</h2>
+  <h2 className="text-xl md:text-2xl  text-gray-800 font-semibold md:ml-[15px]">Welcome Back, Jenil!</h2>
   <p className="text-base md:text-lg text-gray-800 mt-1 md:ml-[15px]">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enjoy your admin panel!
   </p>
